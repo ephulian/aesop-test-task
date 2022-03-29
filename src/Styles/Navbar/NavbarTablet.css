@@ -1,0 +1,8 @@
+.active {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  -webkit-transform: translateY(34.5px);
+          transform: translateY(34.5px);
+}
+/*# sourceMappingURL=NavbarTablet.css.map */

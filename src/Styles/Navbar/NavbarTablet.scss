@@ -1,0 +1,8 @@
+@import '../Root/Variables.scss';
+
+.active {
+	width: 100%;
+	height: 2px;
+	background-color: #000;
+	transform: translateY(34.5px);
+}

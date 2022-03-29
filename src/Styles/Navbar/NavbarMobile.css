@@ -134,4 +134,112 @@ h3 {
     padding: 2.5rem;
   }
 }
-/*# sourceMappingURL=Global.css.map */
+
+.navbar-wrapper {
+  width: 100%;
+  height: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-wrapper .links-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.75rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-wrapper .links-wrapper h3 {
+  font-size: 17px;
+}
+
+.navbar-wrapper .links-wrapper .cross::before {
+  content: '\00d7';
+  color: #333;
+  font-weight: 100;
+  font-family: Arial, sans-serif;
+  font-size: 26px;
+}
+
+@media screen and (min-width: 640px) {
+  .navbar-wrapper {
+    border-bottom: 1px solid #c1c1c1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-wrapper {
+    border-bottom: none;
+  }
+  .navbar-wrapper h3 {
+    font-weight: 0;
+  }
+}
+
+.navbar-wrapper .burger {
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  width: 16px;
+  height: 10px;
+}
+
+.full-burger-menu {
+  overflow: hidden;
+  -webkit-transition: all 0.3 ease-in;
+  transition: all 0.3 ease-in;
+}
+
+.full-burger-menu ul {
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.full-burger-menu ul li {
+  padding: 1rem 1rem;
+  border-top: 1px solid #c1c1c1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.full-burger-menu ul li .arrow {
+  border: solid #c1c1c1;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.full-burger-menu ul li h1 {
+  font-size: 23px;
+}
+
+.closed {
+  max-height: 0;
+  -webkit-transition: max-height 0.3 ease-out;
+  transition: max-height 0.3 ease-out;
+  display: none;
+}
+
+.open {
+  max-height: 1000px;
+  -webkit-transition: max-height 0.3 ease-out;
+  transition: max-height 0.3 ease-out;
+}
+/*# sourceMappingURL=NavbarMobile.css.map */

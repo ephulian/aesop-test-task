@@ -4,8 +4,8 @@ $secondaryfont: 'Zapf Humanist 601', 'serif';
 $titlefont: 'title font';
 
 // Font Weights
-$fw_medium: 600;
-$fw_regular: 400;
+$fw_medium: 00;
+$fw_regular: 300;
 
 // Font Sizes
 $fontsize_main: 14px;
@@ -14,9 +14,10 @@ $fontsize_title__tablet: 26px;
 $fontsize_title__desktop: 30px;
 
 // Colors
-$clr_background: #fffef2;
-$clr_font: #333333;
-$clr_cart: #252525;
+$clr_background: #fffef2; // rgb(255, 254, 242)
+$clr_font: #333333; // rgb(51, 51, 51)
+$clr_lightgray: #c1c1c1; // rgb(51, 51, 51)
+$clr_cart: #252525; // rgb(37, 37, 37)
 
 // Breakpoints
 $tablet: 640px;

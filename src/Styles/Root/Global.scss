@@ -1,8 +1,14 @@
 @import './Reset.scss';
 @import './Variables.scss';
 
+#root {
+	width: 100%;
+}
+
 body {
 	background-color: $clr_background;
+	color: $clr_font;
+	width: 100%;
 }
 
 h1 {
@@ -24,4 +30,15 @@ h2 {
 h3 {
 	font-size: $fontsize_main;
 	font-weight: $fw_regular;
+}
+
+.section-center {
+	padding: 1.25rem;
+	@media screen and (min-width: $tablet) {
+		padding: 2rem;
+	}
+
+	@media screen and (min-width: $desktop) {
+		padding: 2.5rem;
+	}
 }

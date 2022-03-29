@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,OAAO,CAAC;EACP,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,GAAG;EACX,gBAAgB,EAAE,IAAI;EACtB,SAAS,EAAE,kBAAkB;CAC7B",
+    "sources": [
+        "NavbarTablet.scss",
+        "../Root/Variables.scss"
+    ],
+    "names": [],
+    "file": "NavbarTablet.css"
+}
