@@ -136,6 +136,24 @@ h3 {
   }
 }
 
+#navbar {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  z-index: 2;
+}
+
+#product-detail {
+  -webkit-transform: translateY(90px);
+          transform: translateY(90px);
+  position: relative;
+  z-index: -1;
+}
+
+.foo {
+  font-size: 50px;
+}
+
 input {
   border-bottom: 1px solid #c1c1c1;
   font-size: 18px;
@@ -153,6 +171,8 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 1;
+  background: #fffef2;
 }
 
 .navbar-wrapper .links-wrapper {
@@ -200,6 +220,7 @@ input {
   overflow: hidden;
   -webkit-transition: all 0.3 ease-in;
   transition: all 0.3 ease-in;
+  background: #fffef2;
 }
 
 .full-burger-menu ul {

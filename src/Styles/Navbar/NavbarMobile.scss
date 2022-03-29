@@ -7,6 +7,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	opacity: 1;
+	background: $clr_background;
 
 	.links-wrapper {
 		display: flex;
@@ -45,6 +47,7 @@
 .full-burger-menu {
 	overflow: hidden;
 	transition: all 0.3 ease-in;
+	background: $clr_background;
 	ul {
 		border-bottom: 1px solid $clr_lightgray;
 		li {
