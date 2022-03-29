@@ -1,0 +1,19 @@
+@import '../../Root/Variables.scss';
+
+article {
+	input {
+		width: 250px;
+	}
+
+	.suggested {
+		padding-top: 2rem;
+		padding-bottom: 0.75rem;
+		color: $clr_lightgray;
+		font-size: 14px;
+	}
+
+	li {
+		font-size: 22px;
+		padding: 0;
+	}
+}

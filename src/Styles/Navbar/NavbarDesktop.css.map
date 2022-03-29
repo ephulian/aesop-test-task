@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAC;EACd,SAAS,EAAE,iBAAiB;CAC5B",
+    "sources": [
+        "NavbarDesktop.scss"
+    ],
+    "names": [],
+    "file": "NavbarDesktop.css"
+}

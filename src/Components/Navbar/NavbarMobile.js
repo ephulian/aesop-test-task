@@ -20,7 +20,6 @@ export default function NavbarMobile() {
 					<SearchIcon />
 					<h3> Cart 0</h3>
 					<div onClick={() => handleToggle()} className={`${cross}`}></div>
-					{/* <div className='cross'></div> */}
 				</div>
 			</div>
 			<div className={`full-burger-menu ${toggleBurgerMenu}`}>
@@ -35,31 +34,37 @@ export default function NavbarMobile() {
 						<a href='#'>
 							<h1>Body & Hand</h1>
 						</a>
+						<span className='arrow'></span>
 					</li>
 					<li>
 						<a href='#'>
 							<h1>Hair</h1>
 						</a>
+						<span className='arrow'></span>
 					</li>
 					<li>
 						<a href='#'>
 							<h1>Fragrance</h1>
 						</a>
+						<span className='arrow'></span>
 					</li>
 					<li>
 						<a href='#'>
 							<h1>Home</h1>
 						</a>
+						<span className='arrow'></span>
 					</li>
 					<li>
 						<a href='#'>
 							<h1>Kits & Travel</h1>
 						</a>
+						<span className='arrow'></span>
 					</li>
 					<li>
 						<a href='#'>
 							<h1>Gifts</h1>
 						</a>
+						<span className='arrow'></span>
 					</li>
 				</ul>
 			</div>

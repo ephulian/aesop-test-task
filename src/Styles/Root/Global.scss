@@ -9,6 +9,7 @@ body {
 	background-color: $clr_background;
 	color: $clr_font;
 	width: 100%;
+	font-family: $primaryfont;
 }
 
 h1 {
@@ -41,4 +42,23 @@ h3 {
 	@media screen and (min-width: $desktop) {
 		padding: 2.5rem;
 	}
+}
+
+#navbar {
+	position: absolute;
+	height: auto;
+	width: 100%;
+}
+
+#product-detail {
+	transform: translateY(90px);
+}
+
+.foo {
+	font-size: 50px;
+}
+
+input {
+	border-bottom: 1px solid $clr_lightgray;
+	font-size: 18px;
 }

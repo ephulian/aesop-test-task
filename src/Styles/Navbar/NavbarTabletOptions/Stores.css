@@ -1,0 +1,66 @@
+article .stores-logo {
+  margin: 4rem 0;
+}
+
+article .nearby-stores {
+  padding: 1.25rem 2.25rem;
+  border: 1px solid #c1c1c1;
+  max-width: 210px;
+  margin: 2.25rem 0;
+}
+
+article .nearby-stores h2 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+article .input-container {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #fffef2;
+}
+
+article .input-container input {
+  position: relative;
+  z-index: 2;
+  width: 260px;
+}
+
+article p {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+article .search-by {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+article .down {
+  color: #c1c1c1;
+  font-size: 20px;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
+article .up {
+  color: #c1c1c1;
+  font-size: 14px;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+/*# sourceMappingURL=Stores.css.map */

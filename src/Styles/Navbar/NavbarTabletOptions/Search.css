@@ -1,0 +1,16 @@
+article input {
+  width: 250px;
+}
+
+article .suggested {
+  padding-top: 2rem;
+  padding-bottom: 0.75rem;
+  color: #c1c1c1;
+  font-size: 14px;
+}
+
+article li {
+  font-size: 22px;
+  padding: 0;
+}
+/*# sourceMappingURL=Search.css.map */

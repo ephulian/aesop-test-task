@@ -1,0 +1,17 @@
+article {
+  padding: 2rem;
+}
+
+article .logo {
+  margin-bottom: 2.25rem;
+  margin-top: 1rem;
+}
+
+article li {
+  padding: 0.65rem 0;
+}
+
+article li h3 {
+  font-size: 21px;
+}
+/*# sourceMappingURL=Shop.css.map */

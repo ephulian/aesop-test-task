@@ -1,7 +1,7 @@
-import AesopLogo from './Assets/AesopLogo';
 import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
 import Navbar from './Components/Navbar';
+import ProductDetail from './Components/ProductDetail';
 
 function App() {
 	const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
@@ -27,6 +27,7 @@ function App() {
 			{/* shipping */}
 			{/* header */}
 			<Navbar query={query} />
+			<ProductDetail />
 			{/* <div className='navtigation'>{logo}</div> */}
 			{/* {logo} */}
 			{/* product detail */}

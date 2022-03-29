@@ -1,0 +1,55 @@
+@import '../../Root/Variables.scss';
+
+article {
+	.stores-logo {
+		margin: 4rem 0;
+	}
+
+	.nearby-stores {
+		padding: 1.25rem 2.25rem;
+		border: 1px solid $clr_lightgray;
+		max-width: 210px;
+		margin: 2.25rem 0;
+		h2 {
+			font-weight: 500;
+			font-size: 16px;
+		}
+	}
+
+	.input-container {
+		height: 80px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-start;
+		background-color: $clr_background;
+		input {
+			position: relative;
+			z-index: 2;
+			width: 260px;
+		}
+	}
+
+	p {
+		transition: all 0.2s ease;
+		position: relative;
+		z-index: 1;
+	}
+
+	.search-by {
+		font-size: 13px;
+		font-weight: 600;
+	}
+
+	.down {
+		color: $clr_lightgray;
+		font-size: 20px;
+		transform: translateY(20px);
+	}
+
+	.up {
+		color: $clr_lightgray;
+		font-size: 14px;
+		transform: translateY(0);
+	}
+}

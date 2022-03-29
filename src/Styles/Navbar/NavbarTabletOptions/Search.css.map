@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AACC,OADM,CACN,KAAK,CAAC;EACL,KAAK,EAAE,KAAK;CACZ;;AAHF,AAKC,OALM,CAKN,UAAU,CAAC;EACV,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,OAAO;EACvB,KAAK,ECQS,OAAO;EDPrB,SAAS,EAAE,IAAI;CACf;;AAVF,AAYC,OAZM,CAYN,EAAE,CAAC;EACF,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,CAAC;CACV",
+    "sources": [
+        "Search.scss",
+        "../../Root/Variables.scss"
+    ],
+    "names": [],
+    "file": "Search.css"
+}

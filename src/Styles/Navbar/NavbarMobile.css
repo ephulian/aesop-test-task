@@ -91,6 +91,7 @@ body {
   background-color: #fffef2;
   color: #333333;
   width: 100%;
+  font-family: "neue-haas-unica", sans-serif;
 }
 
 h1 {
@@ -111,7 +112,7 @@ h1 {
 
 h2 {
   font-size: 14px;
-  font-weight: 0;
+  font-weight: 500;
 }
 
 h3 {
@@ -133,6 +134,11 @@ h3 {
   .section-center {
     padding: 2.5rem;
   }
+}
+
+input {
+  border-bottom: 1px solid #c1c1c1;
+  font-size: 18px;
 }
 
 .navbar-wrapper {
@@ -181,9 +187,6 @@ h3 {
   .navbar-wrapper {
     border-bottom: none;
   }
-  .navbar-wrapper h3 {
-    font-weight: 0;
-  }
 }
 
 .navbar-wrapper .burger {
@@ -227,7 +230,7 @@ h3 {
 }
 
 .full-burger-menu ul li h1 {
-  font-size: 23px;
+  font-size: 18px;
 }
 
 .closed {

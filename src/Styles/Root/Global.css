@@ -91,6 +91,7 @@ body {
   background-color: #fffef2;
   color: #333333;
   width: 100%;
+  font-family: "neue-haas-unica", sans-serif;
 }
 
 h1 {
@@ -111,7 +112,7 @@ h1 {
 
 h2 {
   font-size: 14px;
-  font-weight: 0;
+  font-weight: 500;
 }
 
 h3 {
@@ -133,5 +134,25 @@ h3 {
   .section-center {
     padding: 2.5rem;
   }
+}
+
+#navbar {
+  position: absolute;
+  height: auto;
+  width: 100%;
+}
+
+#product-detail {
+  -webkit-transform: translateY(90px);
+          transform: translateY(90px);
+}
+
+.foo {
+  font-size: 50px;
+}
+
+input {
+  border-bottom: 1px solid #c1c1c1;
+  font-size: 18px;
 }
 /*# sourceMappingURL=Global.css.map */

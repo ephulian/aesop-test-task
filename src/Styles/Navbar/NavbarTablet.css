@@ -1,8 +1,33 @@
 .active {
   width: 100%;
-  height: 2px;
+  height: 2.5px;
   background-color: #000;
-  -webkit-transform: translateY(34.5px);
-          transform: translateY(34.5px);
+  -webkit-transform: translateY(32px);
+          transform: translateY(32px);
+}
+
+.info-open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info-open h3 {
+  padding-right: 7px;
+}
+
+.info-open div {
+  -webkit-transform: translateY(2.5px);
+          transform: translateY(2.5px);
+}
+
+.info-closed {
+  display: none;
 }
 /*# sourceMappingURL=NavbarTablet.css.map */
