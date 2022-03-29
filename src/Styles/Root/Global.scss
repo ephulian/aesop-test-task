@@ -1,0 +1,27 @@
+@import './Reset.scss';
+@import './Variables.scss';
+
+body {
+	background-color: $clr_background;
+}
+
+h1 {
+	font-size: $fontsize_title__mobile;
+	@media screen and (min-width: $tablet) {
+		font-size: $fontsize_title__tablet;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: $fontsize_title__desktop;
+	}
+}
+
+h2 {
+	font-size: $fontsize_main;
+	font-weight: $fw_medium;
+}
+
+h3 {
+	font-size: $fontsize_main;
+	font-weight: $fw_regular;
+}
