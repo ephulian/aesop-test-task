@@ -6,6 +6,7 @@ import ProductDetail from './Components/ProductDetail';
 // Database
 import { db } from './firebase-config';
 import { collection, onSnapshot } from 'firebase/firestore';
+import Cart from './Components/Cart';
 
 function App() {
 	const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
@@ -42,21 +43,17 @@ function App() {
 
 	return (
 		<>
-			{/* {query} */}
-			{/* cart */}
-			{/* shipping */}
-			{/* header */}
 			{loading ? (
 				<h2>Loading...</h2>
 			) : (
 				<>
+					{/* alert */}
+					<Cart />
+					{/* shipping */}
 					<Navbar query={query} />
 					<ProductDetail key={products.id} {...currentProduct} />
 				</>
 			)}
-			{/* <div className='navtigation'>{logo}</div> */}
-			{/* {logo} */}
-			{/* product detail */}
 		</>
 	);
 }

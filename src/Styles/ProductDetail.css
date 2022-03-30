@@ -1,8 +1,12 @@
-.company-logo {
+.product-detail {
+  width: 100%;
+}
+
+.product-detail .company-logo {
   display: none;
 }
 
-.product-img-container {
+.product-detail .product-img-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,11 +19,11 @@
   height: 200px;
 }
 
-img {
+.product-detail .product-img-container .product-img {
   max-width: 200px;
 }
 
-.type {
+.product-detail .type {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,36 +34,19 @@ img {
   height: 20px;
 }
 
-.product-info .product-title {
+.product-detail .product-info .product-title {
   padding-top: 1rem;
   padding-bottom: 0rem;
   font-weight: 400;
 }
 
-.product-info .description {
+.product-detail .product-info .description {
   font-size: 16px;
   margin-top: 0.25rem;
   margin-bottom: 0.5rem;
 }
 
-.product-specs .product-options-title {
-  margin-bottom: 0.45rem;
-}
-
-.product-specs .radio {
-  margin-right: 1rem;
-}
-
-.product-specs .radio .radio__input {
-  border: 1px solid #333333;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  margin: 0;
-  margin-right: 9.5px;
-}
-
-.product-specs .add-to-cart {
+.product-detail .pick-and-pay .add-to-cart {
   background: #333333;
   width: 100%;
   padding: 1.5rem;
@@ -70,35 +57,161 @@ img {
   border: none;
 }
 
-.product-specs .pay-later {
+.product-detail .pick-and-pay .pay-later {
   display: block;
 }
 
-.product-specs .pay-later .klarna {
+.product-detail .pick-and-pay .pay-later .klarna {
   font-weight: 600;
 }
 
-.product-specs .pay-later a {
+.product-detail .pick-and-pay .pay-later a {
   text-decoration: underline;
   color: #333333;
 }
 
-.product-specs .specs-body-wrapper {
+.product-detail .pick-and-pay .product-options-title {
+  margin-bottom: 0.45rem;
+}
+
+.product-detail .pick-and-pay .radio {
+  margin-right: 1rem;
+}
+
+.product-detail .pick-and-pay .radio .radio__input {
+  border: 1px solid #333333;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  margin: 0;
+  margin-right: 9.5px;
+}
+
+.product-detail .product-specs .specs-body-wrapper {
   border-top: 2px solid #333333;
   margin-top: 1.65rem;
 }
 
-.product-specs .specs-body-wrapper .single-spec {
+.product-detail .product-specs .specs-body-wrapper .single-spec {
   padding: 1.5rem 0;
   border-bottom: 1px solid #c1c1c1;
 }
 
-.product-specs .specs-body-wrapper .single-spec h2,
-.product-specs .specs-body-wrapper .single-spec h3 {
+.product-detail .product-specs .specs-body-wrapper .single-spec h2,
+.product-detail .product-specs .specs-body-wrapper .single-spec h3 {
   margin: 0;
 }
 
-.product-specs .specs-body-wrapper .upsell {
+.product-detail .product-specs .specs-body-wrapper .upsell {
   border: none;
+}
+
+@media screen and (min-width: 640px) {
+  .product-detail {
+    padding-top: 4rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'image image' 'type .....' 'info pickandpay' 'info specs ' 'info specs ' 'info upsell';
+  }
+  .product-detail .type {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: type;
+    height: 24px;
+  }
+  .product-detail .type h1 {
+    font-size: 16px;
+  }
+  .product-detail .upsell {
+    -ms-grid-row: 6;
+    -ms-grid-column: 2;
+    grid-area: upsell;
+  }
+  .product-detail .product-info {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 1;
+    grid-area: info;
+    margin-top: -230px;
+    padding-right: 15px;
+  }
+  .product-detail .product-info .description {
+    font-size: 14px;
+  }
+  .product-detail .product-specs {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: specs;
+  }
+  .product-detail .product-img-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: image;
+    height: 300px;
+    width: 100%;
+    justify-items: flex-start;
+    margin-bottom: 4rem;
+  }
+  .product-detail .product-img-container .product-img {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: 300px;
+    max-width: 300px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .product-detail .product-img-container .company-logo {
+    display: block;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    position: absolute;
+    left: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .product-detail {
+    -ms-grid-columns: 58.5% auto;
+        grid-template-columns: 58.5% auto;
+        grid-template-areas: 'image type' 'image info' 'image specs' 'image pickandpay' 'image upsell';
+    padding-right: 7rem;
+  }
+  .product-detail .product-img-container {
+    height: 100%;
+    max-width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .product-detail .product-img-container .product-img {
+    height: 500px;
+    max-width: 500px;
+  }
+  .product-detail .product-img-container .company-logo {
+    top: 70px;
+    left: 3.5rem;
+    -webkit-transform: scale(1.35);
+            transform: scale(1.35);
+  }
+  .product-detail .pick-and-pay {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    grid-area: pickandpay;
+  }
+  .product-detail .upsell {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    grid-area: upsell;
+  }
+  .product-detail .product-info {
+    margin-top: 0;
+  }
 }
 /*# sourceMappingURL=ProductDetail.css.map */

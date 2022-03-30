@@ -27,21 +27,21 @@ export default function ProductDetail(props) {
 	}, [sizeOptions]);
 
 	return (
-		<section id='product-detail' className='section-center'>
-			<AesopLogo className='company-logo' />
+		<section id='product-detail' className='product-detail section-center'>
 			<div className='type'>
 				<h3>Skin</h3>
 				<h1>•</h1>
 				<h3>Cleanse</h3>
 			</div>
 			<div className='product-img-container'>
-				<img src={sizeImage} alt='' />
+				<AesopLogo className='company-logo' />
+				<img src={sizeImage} className='product-img' alt='' />
 			</div>
 			<div className='product-info'>
 				<h1 className='product-title'>{name}</h1>
 				<p className='description'>{description}</p>
 			</div>
-			<div className='product-specs'>
+			<div className='pick-and-pay'>
 				<h3 className='product-options-title'>Sizes</h3>
 				{sizeOptionsState.map((size, index) => {
 					return (
@@ -63,6 +63,8 @@ export default function ProductDetail(props) {
 						</span>
 					</h3>
 				</div>
+			</div>
+			<div className='product-specs'>
 				<div className='specs-body-wrapper'>
 					<div className='single-spec'>
 						<h2>Suited to</h2>
@@ -76,11 +78,15 @@ export default function ProductDetail(props) {
 						<h2>Key Ingredients</h2>
 						<h3>{`${specsState['Key Ingredients']}`}</h3>
 					</div>
-					<div className='single-spec upsell'>
+					{/* <div className='single-spec upsell'>
 						<h2>Discover the kit</h2>
 						<h3>{`${specsState['Kit']}`}</h3>
-					</div>
+					</div> */}
 				</div>
+			</div>
+			<div className='single-spec upsell'>
+				<h2>Discover the kit</h2>
+				<h3>{`${specsState['Kit']}`}</h3>
 			</div>
 		</section>
 	);

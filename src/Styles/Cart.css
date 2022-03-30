@@ -1,1 +1,11 @@
-/* No CSS *//*# sourceMappingURL=Cart.css.map */
+.cart-container {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  background: #333333;
+  color: #c1c1c1;
+  border: 2px solid red;
+  display: none;
+}
+/*# sourceMappingURL=Cart.css.map */

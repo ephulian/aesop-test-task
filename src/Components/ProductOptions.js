@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Styles/ProductDetail.css';
 
 export default function ProductOptions({ size, index, pickedRadioOption }) {
 	return (

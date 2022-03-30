@@ -5,7 +5,7 @@
 		all: unset;
 		display: revert;
 	}
- */
+	*/
 /* Preferred box-sizing value */
 *,
 *::before,
@@ -91,10 +91,10 @@ meter {
 body {
   background-color: #fffef2;
   color: #333333;
-  width: 100%;
   font-family: "neue-haas-unica", sans-serif;
   position: relative;
   z-index: -1;
+  margin: 0;
 }
 
 a {
