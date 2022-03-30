@@ -1,0 +1,97 @@
+@import './Root/Variables.scss';
+
+.company-logo {
+	display: none;
+}
+
+.product-img-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+	height: 200px;
+}
+
+img {
+	max-width: 200px;
+}
+
+.type {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	height: 20px;
+}
+
+.product-info {
+	.product-title {
+		padding-top: 1rem;
+		padding-bottom: 0rem;
+		font-weight: 400;
+	}
+	.description {
+		font-size: 16px;
+		margin-top: 0.25rem;
+		margin-bottom: 0.5rem;
+	}
+}
+
+.product-specs {
+	.product-options-title {
+		margin-bottom: 0.45rem;
+	}
+
+	.radio {
+		margin-right: 1rem;
+		.radio__input {
+			border: 1px solid $clr_font;
+			height: 12px;
+			width: 12px;
+			border-radius: 50%;
+			margin: 0;
+			margin-right: 9.5px;
+		}
+	}
+
+	.add-to-cart {
+		background: $clr_font;
+		width: 100%;
+		padding: 1.5rem;
+		color: $clr_background;
+		text-align: center;
+		margin-top: 2rem;
+		margin-bottom: 0.875rem;
+		border: none;
+	}
+
+	.pay-later {
+		display: block;
+		.klarna {
+			font-weight: 600;
+		}
+		a {
+			text-decoration: underline;
+			color: $clr_font;
+		}
+	}
+
+	.specs-body-wrapper {
+		border-top: 2px solid $clr_font;
+		margin-top: 1.65rem;
+		.single-spec {
+			padding: 1.5rem 0;
+			border-bottom: 1px solid $clr_lightgray;
+			h2,
+			h3 {
+				margin: 0;
+			}
+		}
+		.upsell {
+			border: none;
+		}
+	}
+}
+
+@media screen and (min-width: 640px) {
+}

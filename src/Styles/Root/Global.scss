@@ -3,6 +3,8 @@
 
 #root {
 	width: 100%;
+	position: relative;
+	z-index: -1;
 }
 
 body {
@@ -10,6 +12,13 @@ body {
 	color: $clr_font;
 	width: 100%;
 	font-family: $primaryfont;
+	position: relative;
+	z-index: -1;
+}
+
+a {
+	text-decoration: none;
+	color: $clr_font;
 }
 
 h1 {
@@ -35,6 +44,7 @@ h3 {
 
 .section-center {
 	padding: 1.25rem;
+	width: 100%;
 	@media screen and (min-width: $tablet) {
 		padding: 2rem;
 	}
