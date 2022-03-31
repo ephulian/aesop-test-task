@@ -3,7 +3,7 @@ import AesopLogo from '../../Assets/AesopLogo';
 import SearchIcon from '../../Assets/SearchIcon';
 import '../../Styles/Navbar/NavbarMobile.css';
 
-export default function NavbarMobile() {
+export default function NavbarMobile({ toggleCart }) {
 	const [toggleBurgerMenu, setToggleBurgerMenu] = useState('closed');
 	const [cross, setCross] = useState('burger');
 
@@ -18,7 +18,7 @@ export default function NavbarMobile() {
 				<AesopLogo />
 				<div className='links-wrapper'>
 					<SearchIcon />
-					<h3> Cart 0</h3>
+					<h3 onClick={() => toggleCart()}> Cart 0</h3>
 					<div onClick={() => handleToggle()} className={`${cross}`}></div>
 				</div>
 			</div>

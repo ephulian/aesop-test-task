@@ -128,6 +128,11 @@ h3 {
   font-weight: 300;
 }
 
+h4 {
+  font-weight: 100;
+  font-size: 14px;
+}
+
 .section-center {
   padding: 1.25rem;
   width: 100%;
@@ -164,7 +169,7 @@ h3 {
 }
 
 input {
-  border-bottom: 1px solid #c1c1c1;
+  border-bottom: 1px solid #bcbbb4;
   font-size: 18px;
 }
 /*# sourceMappingURL=Global.css.map */

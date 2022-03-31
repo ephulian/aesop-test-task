@@ -16,6 +16,7 @@ function App() {
 	const [query, setQuery] = useState('');
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [cartState, setCartState] = useState('cart-closed');
 
 	const productsRef = collection(db, 'products');
 
@@ -26,6 +27,10 @@ function App() {
 			setProducts(productsList);
 			setLoading(false);
 		});
+	};
+
+	const toggleCart = () => {
+		cartState === 'cart-open' ? setCartState('cart-closed') : setCartState('cart-open');
 	};
 
 	const currentProduct = products[0];
@@ -48,9 +53,9 @@ function App() {
 			) : (
 				<>
 					{/* alert */}
-					<Cart />
+					<Cart toggleCart={toggleCart} cartState={cartState} />
 					{/* shipping */}
-					<Navbar query={query} />
+					<Navbar toggleCart={toggleCart} cartState={cartState} query={query} />
 					<ProductDetail key={products.id} {...currentProduct} />
 				</>
 			)}

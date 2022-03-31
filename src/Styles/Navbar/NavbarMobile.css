@@ -5,7 +5,7 @@
 		all: unset;
 		display: revert;
 	}
- */
+	*/
 /* Preferred box-sizing value */
 *,
 *::before,
@@ -91,10 +91,15 @@ meter {
 body {
   background-color: #fffef2;
   color: #333333;
-  width: 100%;
   font-family: "neue-haas-unica", sans-serif;
   position: relative;
   z-index: -1;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
 }
 
 h1 {
@@ -121,6 +126,11 @@ h2 {
 h3 {
   font-size: 14px;
   font-weight: 300;
+}
+
+h4 {
+  font-weight: 100;
+  font-size: 14px;
 }
 
 .section-center {
@@ -159,7 +169,7 @@ h3 {
 }
 
 input {
-  border-bottom: 1px solid #c1c1c1;
+  border-bottom: 1px solid #bcbbb4;
   font-size: 18px;
 }
 
@@ -199,7 +209,7 @@ input {
 
 @media screen and (min-width: 640px) {
   .navbar-wrapper {
-    border-bottom: 1px solid #c1c1c1;
+    border-bottom: 1px solid #bcbbb4;
   }
 }
 
@@ -224,12 +234,12 @@ input {
 }
 
 .full-burger-menu ul {
-  border-bottom: 1px solid #c1c1c1;
+  border-bottom: 1px solid #bcbbb4;
 }
 
 .full-burger-menu ul li {
   padding: 1rem 1rem;
-  border-top: 1px solid #c1c1c1;
+  border-top: 1px solid #bcbbb4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -242,7 +252,7 @@ input {
 }
 
 .full-burger-menu ul li .arrow {
-  border: solid #c1c1c1;
+  border: solid #bcbbb4;
   border-width: 0 1.5px 1.5px 0;
   display: inline-block;
   padding: 4px;

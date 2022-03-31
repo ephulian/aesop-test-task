@@ -7,7 +7,7 @@ import Search from './NavbarTabletSelection/Search';
 import Shop from './NavbarTabletSelection/Shop';
 import Stores from './NavbarTabletSelection/Stores';
 
-export default function NavbarTablet() {
+export default function NavbarTablet({ toggleCart }) {
 	const [info, setInfo] = useState('');
 	const [options, setOptions] = useState('info-closed');
 
@@ -92,7 +92,7 @@ export default function NavbarTablet() {
 						<h3>Login</h3>
 					</a>
 					<a href='/#'>
-						<h3>Cart 0</h3>
+						<h3 onClick={() => toggleCart()}> Cart 0</h3>
 					</a>
 				</div>
 			</div>

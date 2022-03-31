@@ -4,17 +4,17 @@ import NavbarMobile from './Navbar/NavbarMobile';
 import NavbarTablet from './Navbar/NavbarTablet';
 import '../Styles/Root/Global.css';
 
-export default function Navbar({ query }) {
+export default function Navbar({ query, toggleCart, cartState }) {
 	return (
 		<div id='navbar'>
 			{(() => {
 				switch (query) {
 					case 'mobile':
-						return <NavbarMobile />;
+						return <NavbarMobile toggleCart={toggleCart} />;
 					case 'tablet':
-						return <NavbarTablet />;
+						return <NavbarTablet toggleCart={toggleCart} />;
 					case 'desktop':
-						return <NavbarDesktop />;
+						return <NavbarDesktop toggleCart={toggleCart} />;
 					default:
 				}
 			})()}

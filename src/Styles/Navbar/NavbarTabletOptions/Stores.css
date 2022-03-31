@@ -4,7 +4,7 @@ article .stores-logo {
 
 article .nearby-stores {
   padding: 1.25rem 2.25rem;
-  border: 1px solid #c1c1c1;
+  border: 1px solid #bcbbb4;
   max-width: 210px;
   margin: 2.25rem 0;
 }
@@ -51,14 +51,14 @@ article .search-by {
 }
 
 article .down {
-  color: #c1c1c1;
+  color: #bcbbb4;
   font-size: 20px;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
 }
 
 article .up {
-  color: #c1c1c1;
+  color: #bcbbb4;
   font-size: 14px;
   -webkit-transform: translateY(0);
           transform: translateY(0);
