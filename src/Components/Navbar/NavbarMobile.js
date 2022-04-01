@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import AesopLogo from '../../Assets/AesopLogo';
 import SearchIcon from '../../Assets/SearchIcon';
 import '../../Styles/Navbar/NavbarMobile.css';
@@ -6,6 +7,10 @@ import '../../Styles/Navbar/NavbarMobile.css';
 export default function NavbarMobile({ toggleCart }) {
 	const [toggleBurgerMenu, setToggleBurgerMenu] = useState('closed');
 	const [cross, setCross] = useState('burger');
+
+	const cartStore = useSelector((state) => state.cart.items);
+	let cartItems = 0;
+	cartStore.forEach((item) => (cartItems += item.quantity));
 
 	const handleToggle = () => {
 		toggleBurgerMenu === 'closed' ? setToggleBurgerMenu('open') : setToggleBurgerMenu('closed');
@@ -18,7 +23,7 @@ export default function NavbarMobile({ toggleCart }) {
 				<AesopLogo />
 				<div className='links-wrapper'>
 					<SearchIcon />
-					<h3 onClick={() => toggleCart()}> Cart 0</h3>
+					<h3 onClick={() => toggleCart()}> Cart {cartItems}</h3>
 					<div onClick={() => handleToggle()} className={`${cross}`}></div>
 				</div>
 			</div>

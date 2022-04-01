@@ -57,6 +57,7 @@
   position: absolute;
   -webkit-transform: translateY(40px);
           transform: translateY(40px);
+  z-index: 4;
 }
 
 .select-box .options-container .option,

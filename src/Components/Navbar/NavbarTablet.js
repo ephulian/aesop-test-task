@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import AesopLogo from '../../Assets/AesopLogo';
 import SearchIcon from '../../Assets/SearchIcon';
 import '../../Styles/Navbar/NavbarTablet.css';
@@ -10,6 +11,10 @@ import Stores from './NavbarTabletSelection/Stores';
 export default function NavbarTablet({ toggleCart }) {
 	const [info, setInfo] = useState('');
 	const [options, setOptions] = useState('info-closed');
+
+	const cartStore = useSelector((state) => state.cart.items);
+	let cartItems = 0;
+	cartStore.forEach((item) => (cartItems += item.quantity));
 
 	const handleSelect = (e) => {
 		const currentSelect = e.currentTarget.firstChild.innerHTML;
@@ -92,7 +97,7 @@ export default function NavbarTablet({ toggleCart }) {
 						<h3>Login</h3>
 					</a>
 					<a href='/#'>
-						<h3 onClick={() => toggleCart()}> Cart 0</h3>
+						<h3 onClick={() => toggleCart()}> Cart {cartItems}</h3>
 					</a>
 				</div>
 			</div>

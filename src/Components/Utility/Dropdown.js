@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import reactOnclickoutside from 'react-onclickoutside';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeQuantity } from '../../Store/cart';
 import '../../Styles/Utility/Dropdown.css';
 
-function Dropdown({ quantities = [] }) {
-	const [open, setOpen] = useState('');
-	const [dropdownValue, setDropdownValue] = useState(1);
+function Dropdown({ quantities = [], id }) {
+	const items = useSelector((state) => state.cart.items);
+	const current = items.find((item) => item.id === id);
 
-	Dropdown.handleClickOutside = () => setOpen('');
+	const [open, setOpen] = useState('');
+	const [dropdownValue, setDropdownValue] = useState(items[items.indexOf(current)].quantity);
+
+	const dispatch = useDispatch();
+
+	// Dropdown.handleClickOutside = () => setOpen('');
 
 	const handleClick = () => {
 		!open ? setOpen('active') : setOpen('');
@@ -14,6 +21,7 @@ function Dropdown({ quantities = [] }) {
 
 	const pickValue = (e) => {
 		setDropdownValue(e.target.innerHTML);
+		dispatch(changeQuantity({ id: id, quantity: parseInt(e.target.innerHTML) }));
 		handleClick();
 	};
 
@@ -36,8 +44,10 @@ function Dropdown({ quantities = [] }) {
 	);
 }
 
-const clickOutsideConfig = {
-	handleClickOutside: () => Dropdown.handleClickOutside,
-};
+// const clickOutsideConfig = {
+// 	handleClickOutside: () => Dropdown.handleClickOutside,
+// };
 
-export default reactOnclickoutside(Dropdown, clickOutsideConfig);
+export default Dropdown;
+
+// export default reactOnclickoutside(Dropdown, clickOutsideConfig);

@@ -2,7 +2,7 @@ import { clear } from '@testing-library/user-event/dist/clear';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AesopLogo from '../Assets/AesopLogo';
-import { addItems, clearItems } from '../Store/cart';
+import { addItems } from '../Store/cart';
 import '../Styles/ProductDetail.css';
 import ProductOptions from './ProductOptions';
 
@@ -37,7 +37,6 @@ export default function ProductDetail(props) {
 		];
 
 		dispatch(addItems(...cart));
-		// dispatch(clearItems());
 	};
 
 	useEffect(() => {

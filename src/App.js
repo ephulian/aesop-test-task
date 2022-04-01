@@ -23,9 +23,6 @@ function App() {
 
 	const productsRef = collection(db, 'products');
 
-	const cart = localStorage.getItem('cart');
-	const cartParsed = JSON.parse(cart);
-
 	const cartStore = useSelector((state) => state);
 
 	const getProducts = () => {
@@ -41,41 +38,6 @@ function App() {
 		cartState === 'cart-open' ? setCartState('cart-closed') : setCartState('cart-open');
 	};
 
-	console.log(cartStore.cart.items);
-
-	const getCartContent = () => {
-		if (cartStore && cartStore.cart.items > 0) {
-			setCartContent(
-				cartStore.cart.items.map((item, index) => {
-					return (
-						<CartItem
-							{...item}
-							key={index}
-							// setCartContent={setCartContent}
-							// cartContent={cartContent}
-						/>
-					);
-				})
-			);
-		}
-		// if (cartParsed && cartParsed.length > 0) {
-		// 	setCartContent(
-		// 		cartParsed.map((item, index) => {
-		// 			return (
-		// 				<CartItem
-		// 					{...item}
-		// 					key={index}
-		// 					setCartContent={setCartContent}
-		// 					cartContent={cartParsed}
-		// 				/>
-		// 			);
-		// 		})
-		// 	);
-		// } else {
-		// 	setCartContent(<></>);
-		// }
-	};
-
 	const currentProduct = products[0];
 
 	useEffect(() => {
@@ -87,7 +49,6 @@ function App() {
 			setQuery('desktop');
 		}
 		getProducts();
-		getCartContent();
 	}, [isMobile, isTablet, isDesktop, cartStore]);
 
 	return loading ? (
@@ -108,7 +69,7 @@ function App() {
 					})}
 			</Cart>
 			{/* shipping */}
-			<Navbar toggleCart={toggleCart} cartState={cartState} query={query} />
+			<Navbar toggleCart={toggleCart} query={query} />
 			<ProductDetail key={products.id} {...currentProduct} />
 		</>
 	);

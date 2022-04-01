@@ -10,19 +10,18 @@ export const cartSlice = createSlice({
 			// If list empty - add
 			if (state.items.length === 0) {
 				state.items.push(action.payload);
+			} else if (
+				// If list is NOT empty
+				state.items.length > 0 &&
+				// AND cannot find the matching ID
+				!state.items.find((item) => item.id === action.payload.id)
+			) {
+				// Add to list
+				state.items.push(action.payload);
 			} else {
-				// If list NOT empty, check id's to avoid duplication
-				state.items.forEach((item, index) => {
-					if (item.id !== action.payload.id) {
-						state.items.push(action.payload);
-					} else if (item.id === action.payload.id && item.size !== action.payload.size) {
-						// Add another item if different size
-						state.items.push(action.payload);
-					} else if (item.id === action.payload.id) {
-						// If same size - increment quantity
-						state.items[index].quantity++;
-					}
-				});
+				// If already existing in list, update qunatity
+				const found = state.items.find((item) => item.id === action.payload.id);
+				state.items[state.items.indexOf(found)].quantity++;
 			}
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
@@ -34,8 +33,12 @@ export const cartSlice = createSlice({
 			state.items = state.items.filter((item) => item.id !== action.payload.id);
 			localStorage.setItem('cart', JSON.stringify(state.items));
 		},
+		changeQuantity: (state, action) => {
+			const found = state.items.find((item) => item.id === action.payload.id);
+			state.items[state.items.indexOf(found)].quantity = action.payload.quantity;
+		},
 	},
 });
 
-export const { addItems, clearItems, removeItems } = cartSlice.actions;
+export const { addItems, clearItems, removeItems, changeQuantity } = cartSlice.actions;
 export default cartSlice.reducer;

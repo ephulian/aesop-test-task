@@ -1,8 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import SearchIcon from '../../Assets/SearchIcon';
 import '../../Styles/Navbar/NavbarDesktop.css';
 
 export default function NavbarDesktop({ toggleCart }) {
+	const cartStore = useSelector((state) => state.cart.items);
+	let cartItems = 0;
+	cartStore.forEach((item) => (cartItems += item.quantity));
+
 	return (
 		<div className='navbar-wrapper section-center'>
 			<div className='links-wrapper'>
@@ -40,7 +45,7 @@ export default function NavbarDesktop({ toggleCart }) {
 					<h3 className='desktop-links'>Login</h3>
 				</a>
 				<a href='#'>
-					<h3 onClick={() => toggleCart()}> Cart 0</h3>
+					<h3 onClick={() => toggleCart()}> Cart {cartItems}</h3>
 				</a>
 			</div>
 		</div>

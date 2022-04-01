@@ -30,7 +30,6 @@ export default function CartItem({ name, id, description, price, size, quantity 
 			value: 5,
 		},
 	];
-	// const item = Object.keys(props)[0];
 
 	const total = parseInt(price * quantity);
 
@@ -42,13 +41,18 @@ export default function CartItem({ name, id, description, price, size, quantity 
 		<div className='cart-item'>
 			<h3 className='cart-item__title'>{name}</h3>
 			<div className='cart_item__size-wrapper'>
-				<h4 className='cart-item__size'>{size}</h4>
-				<h4 onClick={(e) => handleRemove(e)} className='cart-item__remove'>
+				<h4 className='cart-item__size small'>{size}</h4>
+				<h4 onClick={(e) => handleRemove(e)} className='cart-item__remove small mobile'>
 					Remove
 				</h4>
 			</div>
-			<h4 className='cart-item__price'>{total.toFixed(2)}</h4>
-			<Dropdown quantities={quantities} />
+			<h4 className='cart-item__price small'>£{total.toFixed(2)}</h4>
+			<div className='quantities-container'>
+				<h4 onClick={(e) => handleRemove(e)} className='cart-item__remove small desktop'>
+					Remove
+				</h4>
+				<Dropdown quantities={quantities} id={id} />
+			</div>
 		</div>
 	);
 }
