@@ -178,8 +178,8 @@
 
 @media screen and (min-width: 1024px) {
   .product-detail {
-    -ms-grid-columns: 58.5% auto;
-        grid-template-columns: 58.5% auto;
+    -ms-grid-columns: 75% 25%;
+        grid-template-columns: 75% 25%;
         grid-template-areas: 'image type' 'image info' 'image specs' 'image pickandpay' 'image upsell';
     padding-right: 7rem;
   }
@@ -189,6 +189,10 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-right: 150px;
   }
   .product-detail .product-img-container .product-img {
     height: 500px;

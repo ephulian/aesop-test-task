@@ -176,7 +176,7 @@
 	}
 
 	@media screen and (min-width: 1024px) {
-		grid-template-columns: 58.5% auto;
+		grid-template-columns: 75% 25%;
 		grid-template-areas:
 			'image type'
 			'image info'
@@ -191,6 +191,8 @@
 			height: 100%;
 			max-width: 100%;
 			align-items: center;
+			justify-content: flex-end;
+			padding-right: 150px;
 
 			.product-img {
 				height: 500px;
