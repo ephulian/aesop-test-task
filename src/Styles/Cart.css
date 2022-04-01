@@ -188,37 +188,39 @@
 @media screen and (min-width: 640px) {
   .cart-container {
     position: relative;
+    padding: 0;
+    height: auto;
   }
   .cart-container .inner-container {
     display: block;
     height: auto;
   }
-  .cart-container .title {
+  .cart-container .inner-container .title {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 40% 25% 25% 10%;
         grid-template-columns: 40% 25% 25% 10%;
   }
-  .cart-container .title .qty,
-  .cart-container .title .size {
+  .cart-container .inner-container .title .qty,
+  .cart-container .inner-container .title .size {
     display: block;
   }
-  .cart-container .items-container .mobile {
+  .cart-container .inner-container .items-container .mobile {
     display: none;
   }
-  .cart-container .items-container .cart-content .cart-item {
+  .cart-container .inner-container .items-container .cart-content .cart-item {
     -ms-grid-columns: 40% 25% 25% 10%;
         grid-template-columns: 40% 25% 25% 10%;
         grid-template-areas: 'title size dropdown price';
     padding: 5px 0;
   }
-  .cart-container .items-container .cart-content .cart-item .cart_item__size-wrapper .cart-item__size {
+  .cart-container .inner-container .items-container .cart-content .cart-item .cart_item__size-wrapper .cart-item__size {
     font-size: 15px;
   }
-  .cart-container .items-container .cart-content .cart-item .cart_item__size-wrapper .mobile {
+  .cart-container .inner-container .items-container .cart-content .cart-item .cart_item__size-wrapper .mobile {
     display: none;
   }
-  .cart-container .items-container .cart-content .cart-item .quantities-container {
+  .cart-container .inner-container .items-container .cart-content .cart-item .quantities-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -227,30 +229,30 @@
             align-items: center;
     gap: 2rem;
   }
-  .cart-container .items-container .cart-content .cart-item .quantities-container .desktop {
+  .cart-container .inner-container .items-container .cart-content .cart-item .quantities-container .desktop {
     display: block;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
     font-size: 14px;
   }
-  .cart-container .total-container {
+  .cart-container .inner-container .total-container {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 60% 40%;
         grid-template-columns: 60% 40%;
         grid-template-areas: 'shipping promo' 'shipping compliment' 'shipping total' 'shipping checkout' 'shipping partners';
   }
-  .cart-container .total-container .promo {
+  .cart-container .inner-container .total-container .promo {
     padding: 25px 0;
   }
-  .cart-container .total-container .compliment {
+  .cart-container .inner-container .total-container .compliment {
     font-size: 15px;
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: compliment;
   }
-  .cart-container .total-container .shipping {
+  .cart-container .inner-container .total-container .shipping {
     -ms-grid-row: 1;
     -ms-grid-row-span: 5;
     -ms-grid-column: 1;
@@ -259,23 +261,23 @@
     font-size: 15px;
     margin-top: 185px;
   }
-  .cart-container .total-container .promo {
+  .cart-container .inner-container .total-container .promo {
     font-size: 15px;
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: promo;
   }
-  .cart-container .total-container .total {
+  .cart-container .inner-container .total-container .total {
     -ms-grid-row: 3;
     -ms-grid-column: 2;
     grid-area: total;
   }
-  .cart-container .total-container .checkout {
+  .cart-container .inner-container .total-container .checkout {
     -ms-grid-row: 4;
     -ms-grid-column: 2;
     grid-area: checkout;
   }
-  .cart-container .total-container .partners {
+  .cart-container .inner-container .total-container .partners {
     -ms-grid-row: 5;
     -ms-grid-column: 2;
     grid-area: partners;
@@ -288,9 +290,11 @@
     transition: max-height 0.3 ease-out;
   }
   .cart-open {
-    max-height: 495px;
+    max-height: 1000px;
+    overflow: hidden;
     -webkit-transition: max-height 0.3s ease-out;
     transition: max-height 0.3s ease-out;
+    padding: 0;
   }
 }
 /*# sourceMappingURL=Cart.css.map */
