@@ -191,12 +191,11 @@
 			height: 100%;
 			max-width: 100%;
 			align-items: center;
-			justify-content: flex-end;
-			padding-right: 150px;
+			margin-left: 250px;
 
 			.product-img {
 				height: 500px;
-				max-width: 500px;
+				max-width: 100%;
 			}
 
 			.company-logo {

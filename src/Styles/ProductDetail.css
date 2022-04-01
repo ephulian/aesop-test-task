@@ -189,14 +189,11 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    padding-right: 150px;
+    margin-left: 250px;
   }
   .product-detail .product-img-container .product-img {
     height: 500px;
-    max-width: 500px;
+    max-width: 100%;
   }
   .product-detail .product-img-container .company-logo {
     top: 70px;
