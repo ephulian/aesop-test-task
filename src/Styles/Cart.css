@@ -5,7 +5,6 @@
   height: 100vh;
   background: #333333;
   color: #bcbbb4;
-  border: 2px solid red;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
@@ -77,85 +76,6 @@
   -ms-grid-column: 2;
   grid-area: price;
   text-align: end;
-}
-
-.cart-container .cart-content .cart-item .select-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 150px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  width: 70px;
-  height: auto;
-  position: relative;
-}
-
-.cart-container .cart-content .cart-item .select-box .selected {
-  border: 1px solid #bcbbb4;
-  text-align: center;
-  font-size: 16px;
-  width: 70px;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.cart-container .cart-content .cart-item .select-box .selected::after {
-  content: '';
-  background: url("/src/Assets/angle-down-solid.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  height: 100%;
-  width: 32px;
-  right: 10px;
-  top: 5px;
-}
-
-.cart-container .cart-content .cart-item .select-box .options-container {
-  background-color: #fffef2;
-  color: #333333;
-  width: 70px;
-  height: auto;
-  max-height: 0;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
-  position: absolute;
-  -webkit-transform: translateY(40px);
-          transform: translateY(40px);
-}
-
-.cart-container .cart-content .cart-item .select-box .options-container .option,
-.cart-container .cart-content .cart-item .select-box .options-container .selected {
-  padding: 12px 24px;
-  text-align: center;
-}
-
-.cart-container .cart-content .cart-item .select-box .options-container .option .radio,
-.cart-container .cart-content .cart-item .select-box .options-container .selected .radio {
-  display: none;
-}
-
-.cart-container .cart-content .cart-item .select-box .options-container.active {
-  max-height: 240px;
-  opacity: 1;
 }
 
 .cart-open {

@@ -1,71 +1,38 @@
 import React, { useState } from 'react';
 import reactOnclickoutside from 'react-onclickoutside';
-// import reactOnclickoutside from 'react-onclickoutside';
+import '../../Styles/Utility/Dropdown.css';
 
-function Dropdown({ title, items = [], multiSelect = false }) {
-	const [open, setOpen] = useState(false);
-	const [selection, setSelection] = useState([]);
-	const toggle = () => setOpen(!open);
+function Dropdown({ quantities = [] }) {
+	const [open, setOpen] = useState('');
+	const [dropdownValue, setDropdownValue] = useState(1);
 
-	Dropdown.handleClickOutside = () => setOpen(false);
+	Dropdown.handleClickOutside = () => setOpen('');
 
-	const handleOnClick = (item) => {
-		if (!selection.some((current) => current.id === item.id)) {
-			if (!multiSelect) {
-				setSelection([item]);
-			} else if (multiSelect) {
-			}
-		} else {
-			let selectionAfterRemoval = selection;
-			selectionAfterRemoval = selectionAfterRemoval.filter((current) => current.id !== item.id);
-			setSelection([...selectionAfterRemoval]);
-		}
+	const handleClick = () => {
+		!open ? setOpen('active') : setOpen('');
 	};
 
-	const isItemInSelection = (item) => {
-		if (selection.some((current) => current.id === item.id)) {
-			return true;
-		}
-		return false;
+	const pickValue = (e) => {
+		setDropdownValue(e.target.innerHTML);
+		handleClick();
 	};
 
 	return (
-		<>
-			<div className='dd-wrapper'>
-				<div
-					tabIndex={0}
-					className='dd-header'
-					role='button'
-					onClick={() => {
-						toggle(!open);
-					}}
-				>
-					<div className='dd-header__title'>
-						<p className='dd-header__title--bold'>{title}</p>
-					</div>
-					<div className='dd-header__action'>
-						<p>{open ? 'close' : 'open'}</p>
-					</div>
-				</div>
-				{open && (
-					<ul className='dd-list'>
-						{items.map((item) => (
-							<li className='dd-list__item' key={item.id}>
-								<button
-									type='button'
-									onClick={() => {
-										handleOnClick(item);
-									}}
-								>
-									<span>{item.value}</span>
-									<span>{isItemInSelection(item) && 'Selected'}</span>
-								</button>
-							</li>
-						))}
-					</ul>
-				)}
+		<div className='select-box'>
+			<div onClick={(e) => handleClick(e)} className='selected'>
+				{dropdownValue}
 			</div>
-		</>
+			<div className={`options-container ${open}`}>
+				{quantities.map((item) => (
+					<div key={item.id} className='option'>
+						<input type='radio' className='radio' id='1' name='category' />
+						<label onClick={(e) => pickValue(e)} htmlFor='category'>
+							{item.value}
+						</label>
+					</div>
+				))}
+			</div>
+		</div>
 	);
 }
 

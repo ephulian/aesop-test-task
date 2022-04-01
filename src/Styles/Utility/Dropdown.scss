@@ -1,0 +1,64 @@
+@import '../Root/Variables.scss';
+
+.select-box {
+	display: flex;
+	width: 150px;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 70px;
+	height: auto;
+	position: relative;
+
+	.selected {
+		border: 1px solid $clr_lightgray;
+		text-align: center;
+		font-size: 16px;
+		width: 70px;
+		height: 40px;
+		display: flex;
+		// justify-content: center;
+		align-items: center;
+		padding-left: 19px;
+
+		&::after {
+			content: '';
+			background: url('/src/Assets/angle-down-solid.svg');
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			position: absolute;
+			height: 100%;
+			width: 10px;
+			right: 11px;
+			top: 14px;
+		}
+	}
+
+	.options-container {
+		background-color: $clr_background;
+		color: $clr_font;
+		width: 70px;
+		height: auto;
+		max-height: 0;
+		transition: all 0.3s ease;
+		overflow: hidden;
+		order: 2;
+		position: absolute;
+		transform: translateY(40px);
+		// top: 0;
+
+		.option,
+		.selected {
+			padding: 12px 24px;
+			text-align: center;
+			.radio {
+				display: none;
+			}
+		}
+	}
+
+	.options-container.active {
+		max-height: 240px;
+		opacity: 1;
+	}
+}

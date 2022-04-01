@@ -7,6 +7,8 @@ import ProductDetail from './Components/ProductDetail';
 import { db } from './firebase-config';
 import { collection, onSnapshot } from 'firebase/firestore';
 import Cart from './Components/Cart';
+import CartItem from './Components/CartItem';
+import { useSelector } from 'react-redux';
 
 function App() {
 	const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
@@ -17,8 +19,14 @@ function App() {
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [cartState, setCartState] = useState('cart-closed');
+	const [cartContent, setCartContent] = useState(null);
 
 	const productsRef = collection(db, 'products');
+
+	const cart = localStorage.getItem('cart');
+	const cartParsed = JSON.parse(cart);
+
+	const cartStore = useSelector((state) => state);
 
 	const getProducts = () => {
 		setLoading(true);
@@ -33,6 +41,41 @@ function App() {
 		cartState === 'cart-open' ? setCartState('cart-closed') : setCartState('cart-open');
 	};
 
+	console.log(cartStore.cart.items);
+
+	const getCartContent = () => {
+		if (cartStore && cartStore.cart.items > 0) {
+			setCartContent(
+				cartStore.cart.items.map((item, index) => {
+					return (
+						<CartItem
+							{...item}
+							key={index}
+							// setCartContent={setCartContent}
+							// cartContent={cartContent}
+						/>
+					);
+				})
+			);
+		}
+		// if (cartParsed && cartParsed.length > 0) {
+		// 	setCartContent(
+		// 		cartParsed.map((item, index) => {
+		// 			return (
+		// 				<CartItem
+		// 					{...item}
+		// 					key={index}
+		// 					setCartContent={setCartContent}
+		// 					cartContent={cartParsed}
+		// 				/>
+		// 			);
+		// 		})
+		// 	);
+		// } else {
+		// 	setCartContent(<></>);
+		// }
+	};
+
 	const currentProduct = products[0];
 
 	useEffect(() => {
@@ -44,21 +87,29 @@ function App() {
 			setQuery('desktop');
 		}
 		getProducts();
-	}, [isMobile, isTablet, isDesktop]);
+		getCartContent();
+	}, [isMobile, isTablet, isDesktop, cartStore]);
 
-	return (
+	return loading ? (
+		<h2>Loading...</h2>
+	) : (
 		<>
-			{loading ? (
-				<h2>Loading...</h2>
-			) : (
-				<>
-					{/* alert */}
-					<Cart toggleCart={toggleCart} cartState={cartState} />
-					{/* shipping */}
-					<Navbar toggleCart={toggleCart} cartState={cartState} query={query} />
-					<ProductDetail key={products.id} {...currentProduct} />
-				</>
-			)}
+			{/* alert */}
+			<Cart
+				toggleCart={toggleCart}
+				cartState={cartState}
+				cartContent={cartContent}
+				setCartContent={setCartContent}
+			>
+				{/* {cartContent} */}
+				{cartStore &&
+					cartStore.cart.items.map((item, index) => {
+						return <CartItem {...item} key={index} />;
+					})}
+			</Cart>
+			{/* shipping */}
+			<Navbar toggleCart={toggleCart} cartState={cartState} query={query} />
+			<ProductDetail key={products.id} {...currentProduct} />
 		</>
 	);
 }

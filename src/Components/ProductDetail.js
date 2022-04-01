@@ -1,5 +1,8 @@
+import { clear } from '@testing-library/user-event/dist/clear';
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import AesopLogo from '../Assets/AesopLogo';
+import { addItems, clearItems } from '../Store/cart';
 import '../Styles/ProductDetail.css';
 import ProductOptions from './ProductOptions';
 
@@ -11,10 +14,30 @@ export default function ProductDetail(props) {
 	const [price, setPrice] = useState(0);
 	const [specsState, setSpecsState] = useState({});
 
+	const dispatch = useDispatch();
+	const cartStore = useSelector((state) => state);
+
 	const pickedRadioOption = () => {
 		const pickedOption = document.querySelector('input[name="my-radio-field"]:checked');
 		setSizeImage(sizeOptions[pickedOption.id][0]);
 		setPrice(sizeOptions[pickedOption.id][1].toFixed(2));
+	};
+
+	const addToCart = () => {
+		const pickedOption = document.querySelector('input[name="my-radio-field"]:checked');
+		const cart = [
+			{
+				name: name,
+				id: `${id}-${pickedOption === null ? Object.keys(sizeOptions)[0] : pickedOption.id}`,
+				description: description,
+				size: pickedOption === null ? Object.keys(sizeOptions)[0] : pickedOption.id,
+				quantity: 1,
+				price: pickedOption === null ? Object.values(sizeOptions)[0][1] : price,
+			},
+		];
+
+		dispatch(addItems(...cart));
+		// dispatch(clearItems());
 	};
 
 	useEffect(() => {
@@ -54,7 +77,10 @@ export default function ProductDetail(props) {
 					);
 				})}
 				<br />
-				<button className='add-to-cart'>{`Add to your cart - £${price}`}</button>
+				<button
+					onClick={() => addToCart()}
+					className='add-to-cart'
+				>{`Add to your cart - £${price}`}</button>
 				<div className='pay-later'>
 					<h3>
 						Pay in 30 days with <span className='klarna'>Klarna</span> No fees.{' '}
